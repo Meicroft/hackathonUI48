@@ -21,6 +21,19 @@ export class AppComponent {
     }
 
     ngOnInit() {
+        console.log('howdy');
+        if ("geolocation" in navigator) {
+            /* geolocation is available */
+            console.log("getting location");
+            navigator.geolocation.getCurrentPosition(function(position) {
+                console.log("getting position");
+                console.log(position.coords.latitude + " " + position.coords.longitude);
+            },function () { console.log("some error");});
+        } else {
+            console.log("geolocation is not available");
+            /* geolocation IS NOT available */
+        }
+        console.log("done with geo");
 
         let map = new Map({
             container: 'map',
