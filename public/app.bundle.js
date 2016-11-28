@@ -41513,6 +41513,19 @@
 	        this.geocoder = geocoder;
 	    }
 	    AppComponent.prototype.ngOnInit = function () {
+	        console.log('howdy');
+	        if ("geolocation" in navigator) {
+	            /* geolocation is available */
+	            console.log("getting location");
+	            navigator.geolocation.getCurrentPosition((function (position) {
+	                console.log("getting position");
+	                console.log(position.coords.latitude + " " + position.coords.longitude);
+	            }), (function () { console.log("some error"); }));
+	        }
+	        else {
+	            console.log("geolocation is not available");
+	        }
+	        console.log("done with geo");
 	        var map = new mapbox_gl_1.Map({
 	            container: 'map',
 	            style: 'mapbox://styles/mapbox/light-v9',
