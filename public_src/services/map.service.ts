@@ -10,7 +10,8 @@ export class MapService {
 
     constructor() {
 
-        (mapboxgl as any).accessToken = 'pk.eyJ1IjoiZHozMTY0MjQiLCJhIjoiNzI3NmNkOTcyNWFlNGQxNzU2OTA1N2EzN2FkNWIwMTcifQ.NS8KWg47FzfLPlKY0JMNiQ';
+        (mapboxgl as any).accessToken = 'pk.eyJ1IjoidGltZmlleiIsImEiOiJKV1lsVXVzIn0.BirEP_e4_o1mLJarrgdVaA';
+
 
         this.baseMaps = [
             { name: 'Street', id: 'street' },
